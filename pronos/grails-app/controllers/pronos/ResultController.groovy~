@@ -1,0 +1,6 @@
+package pronos
+
+class ResultController {
+
+    def index() { }
+}
