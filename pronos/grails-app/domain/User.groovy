@@ -31,7 +31,6 @@ Class User{
              password nullable: false, blank: false
              firstname nullable: false, blank: false
              lastname nullable: false, blank: false
-             lastname nullable: false, blank: false
       }
 
 }
