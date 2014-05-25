@@ -1,4 +1,5 @@
-import Match;
+import game.Match;
+import grails.plugin.springsecurity.annotation.Secured
 
 @Secured(['ROLE_ADMIN'])
 class MatchController {
@@ -12,7 +13,7 @@ class MatchController {
       def list() {
           def match = jobService.get(params.id)
 
-          [machineInstance:match]
+          [matchInstance:match]
       }
 
 }
