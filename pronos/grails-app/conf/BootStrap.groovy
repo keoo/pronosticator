@@ -1,4 +1,5 @@
 import pronos.User
+import pronos.UserRole
 import pronos.Role
 
 class BootStrap {
@@ -30,8 +31,9 @@ class BootStrap {
 	       lastname : 'user',
 	       activated : 1
 	       ).save(flush:true)
+
+	       UserRole.create user, roleUser, true
           }
-    
 
 //      def admin = User.findByUsername('admin')
 //      if ( ! admin ){

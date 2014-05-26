@@ -1,0 +1,3 @@
+class UserService {
+    /* Inject dependencies */
+    def springSecurityService

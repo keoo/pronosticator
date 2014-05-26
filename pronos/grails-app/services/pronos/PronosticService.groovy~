@@ -1,0 +1,14 @@
+package pronos
+import pronos.Pronostic;
+
+
+class PronosticService {
+
+      def list (Map params = null){
+      	       return Pronostic.findAll(params)
+	   }
+      def get (def id){
+      	       return Pronostic.findAll(params)
+	   }
+}
+
