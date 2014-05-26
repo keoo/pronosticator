@@ -1,5 +1,4 @@
 package pronos
-import pronos.Pronostic
 
 class User {
 

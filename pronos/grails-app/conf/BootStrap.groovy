@@ -1,4 +1,5 @@
-import game.User
+import pronos.User
+import pronos.Role
 
 class BootStrap {
 
@@ -10,19 +11,38 @@ class BootStrap {
 
     private void createDefaultUser(){
 // If admin not here create him
+//        def roleUser = Role.findByAuthority('ROLE_USER')
+//        if( !roleUser )
+//        {
+//            log.error("Boostrap ERROR : create ROLE_USER first !")
+//            return
+//        }
+          def roleUser = Role.findByAuthority('ROLE_USER')
+	  if( !roleUser )
+		roleUser = new Role(authority: 'ROLE_USER',description:'User role').save(flush:true)
 
-      def admin = User.findByUsername('administrator')
-      if ( ! admin ){
-      	 admin = new User(
-	       firstname : 'admin',
-	       lastname : 'admin',
-	       username : 'admin',
-	       password : 'admin',
-	       email : 'kevin.coulomb@sysfera.com',
-	       activated : 1,
-	       isAdmin : true
+          def user = User.findByUsername('user')
+          if ( ! user ){
+      	  user = new User(
+	       username : 'user',
+	       password : 'user',
+	       firstname : 'user',
+	       lastname : 'user',
+	       activated : 1
 	       ).save(flush:true)
-      }
+          }
+    
+
+//      def admin = User.findByUsername('admin')
+//      if ( ! admin ){
+//      	 admin = new User(
+//	       username : 'admin',
+//	       password : 'admin',
+//	       firstname : 'admin',
+//	       lastname : 'admin',
+//	       activated : 1
+//	       ).save(flush:true)
+//      }
     }
 
 

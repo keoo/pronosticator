@@ -13,7 +13,19 @@ hibernate {
 
 // environment specific settings
 environments {
-    development {
+    development{
+        dataSource {
+            driverClassName = "com.mysql.jdbc.Driver"
+            dialect = org.hibernate.dialect.MySQL5InnoDBDialect
+            dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
+            url = "jdbc:mysql://127.0.0.1/pronos?zeroDateTimeBehavior=convertToNull"
+            username = "root"
+            password = "root"
+        }
+
+    }
+
+    developmentH2 {
         dataSource {
             dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
             url = "jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
