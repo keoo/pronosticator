@@ -8,12 +8,13 @@
 			Pronostic
                         <g:form name="myForm" url="[action:'index',controller:'pronostic']">
 
-                          <label for="domicile">${match.domicile} :</label>
+                          <label for="domicile">${params.domicile} :</label>
                           <input type="text" name="domicile" id="domicile" />
-                          <label for="exterieur">${match.exterieur} :</label>
+                          <label for="exterieur">${params.exterieur} :</label>
                           <input type="text" name="exterieur" id="exterieur" />
 
                         </g:form>
+			<g:link controller="pronostic" action="save" id="${params.id}"><button type="button">Valider</button></g:link>
 			</body>
 </html>
 

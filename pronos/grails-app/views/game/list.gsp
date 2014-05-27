@@ -23,7 +23,7 @@
             <td>${match.starttime}</td>
             <g:if test="${ match.bdomicile == -1 }">
               <td> - ${match.id}</td>
-              <td><g:link controller="Pronostic" action="create" params="${match.id}"><button type="button">Pronostiquer</button></g:link></td>
+              <td><g:link controller="pronostic" action="create" id="${match.id}"><button type="button">Pronostiquer</button></g:link></td>
 <!--              <td><g:link url="${resource(dir:'pronostic', file:'create.gsp')}" params="${[match.id]}"><button onclick="" type="button">Pronosticate!</button></g:link></td>-->
             </g:if>
             <g:else>

@@ -8,7 +8,7 @@ class GameService {
       	       return Game.findAll()
 	   }
       def get (id){
-          return Game.findById(id)
+          return Game.get(id)
       }
 }
 

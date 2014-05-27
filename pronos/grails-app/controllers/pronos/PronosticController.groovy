@@ -14,14 +14,7 @@ class PronosticController {
 
       def create(params) {
                 def game = gameService.get(params.id)
-                render "blaaaaaaaaaa "+params.id
-                if (!game){
-                   flash.message = "bla ->"+params.id+"<- "
-                   flash.message = "bla ->"+params.match+"<-"
-//                   render "blaaaaa"+params.match
-//                   flash.message = "game ->"+params.matchid+"<-"
-}
-                [game:game]
+                [params:game]
       }
 
       def list() {
