@@ -5,7 +5,10 @@ import pronos.Game;
 class GameService {
 
       def list (Map params = null){
-      	       return Game.findAll(params)
+      	       return Game.findAll()
 	   }
+      def get (id){
+          return Game.findById(id)
+      }
 }
 

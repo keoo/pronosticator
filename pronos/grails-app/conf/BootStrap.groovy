@@ -1,4 +1,5 @@
 import pronos.User
+import pronos.Game
 import pronos.UserRole
 import pronos.Role
 
@@ -6,18 +7,12 @@ class BootStrap {
 
     def init = { servletContext ->
     	createDefaultUser()
+        createGames()
     }
     def destroy = {
     }
 
     private void createDefaultUser(){
-// If admin not here create him
-//        def roleUser = Role.findByAuthority('ROLE_USER')
-//        if( !roleUser )
-//        {
-//            log.error("Boostrap ERROR : create ROLE_USER first !")
-//            return
-//        }
           def roleUser = Role.findByAuthority('ROLE_USER')
 	  if( !roleUser )
 		roleUser = new Role(authority: 'ROLE_USER',description:'User role').save(flush:true)
@@ -47,5 +42,10 @@ class BootStrap {
 //      }
     }
 
-
+    private void createGames(){
+            Date d1 = new Date()
+            def game1 = new Game(domicile: 'france', exterieur: 'uruguay', starttime: d1).save(flush:true)            
+            def game2 = new Game(domicile: 'brasil', exterieur: 'china', starttime: d1).save(flush:true)            
+            def game3 = new Game(domicile: 'ukrania', exterieur: 'russia', bdomicile: 2, bexterieur: 1, starttime: d1).save(flush:true)            
+    }
 }

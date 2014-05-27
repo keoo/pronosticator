@@ -8,13 +8,11 @@ class GameController {
       def gameService
 
       def index() {
-
-//      	  	  render "hello world"
-//          redirect(action:"list",params:params)
+          redirect(action:"list",params:params)
       }
 
       def list() {
-          def list = gameService.get()
+          def list = gameService.list()
 
           [list:list]
       }
