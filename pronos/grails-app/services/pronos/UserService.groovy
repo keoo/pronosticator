@@ -14,8 +14,16 @@ class UserService {
         springSecurityService.getCurrentUser()
     }
 
+    def list () {
+        User.list()
+    }
+
     def get(def id) {
         User.get(id)
     }
+    def getSortedUsers (){
+            def query = User.list(sort:"point", order:"desc")
+            return query
 
+    }
 }

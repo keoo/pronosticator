@@ -6,15 +6,14 @@
 		      </head>
 		      <body>
 			Pronostic
-                        <g:form name="myForm" url="[action:'index',controller:'pronostic']">
+                        <g:form method="post" name="myprono" url="[action:'pronosticated',controller:'game', id:params.id]">
 
-                          <label for="domicile">${params.domicile} :</label>
-                          <input type="text" name="domicile" id="domicile" />
-                          <label for="exterieur">${params.exterieur} :</label>
-                          <input type="text" name="exterieur" id="exterieur" />
-
-                        </g:form>
-			<g:link controller="pronostic" action="save" id="${params.id}"><button type="button">Valider</button></g:link>
+                          <label>${params.domicile} :</label>
+                          <input type="textField" name="domicile" id="domicile" />
+                          <label>${params.exterieur} :</label>
+                          <input type="textField" name="exterieur" id="exterieur" />
+                           <input type="submit" value="valider"/>
+                         </g:form>
 			</body>
 </html>
 
