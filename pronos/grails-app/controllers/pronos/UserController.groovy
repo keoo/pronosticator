@@ -16,4 +16,8 @@ class UserController {
           [list:list]
       }
 
+      def logout(){
+      	  redirect(controller: "logout")
+      }
+
 }
