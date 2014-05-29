@@ -19,5 +19,4 @@ class UserController {
       def logout(){
       	  redirect(controller: "logout")
       }
-
 }

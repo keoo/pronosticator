@@ -2,16 +2,16 @@
 <html>
 	<head>
 		<meta name="layout" content="prono"/>
-		      <title>List of matches</title>
+		      <title>Classement</title>
 		      </head>
 		      <body>
-			Match
 
 
     <table>
         <tr> 
             <td>Nom</td>
             <td>Prenom</td>
+            <td>pseudo</td>
             <td>Points</td>
             <td>Classement</td>
         </tr>
@@ -19,6 +19,7 @@
         <tr>
             <td>${user.firstname}</td>
             <td>${user.lastname}</td>
+            <td>${user.username}</td>
             <td>0</td>
             <td>0</td>
         </tr>

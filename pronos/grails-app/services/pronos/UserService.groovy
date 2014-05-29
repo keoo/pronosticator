@@ -1,5 +1,8 @@
 package pronos
 
+import pronos.User
+import pronos.UserRole
+
 
 class UserService {
     /* Inject dependencies */
@@ -25,5 +28,21 @@ class UserService {
             def query = User.list(sort:"point", order:"desc")
             return query
 
+    }
+
+    def create(Map params){
+          def roleUser = Role.findByAuthority('ROLE_USER')
+          def user = User.findByUsername(params.user)
+          if ( ! user ){
+      	  user = new User(
+	       username : params.user,
+	       password : params.pwd,
+	       firstname : params.prenom,
+	       lastname : params.nom,
+	       activated : 1
+	       ).save(flush:true)
+
+	       UserRole.create user, roleUser, true
+	       }
     }
 }

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="layout" content="prono"/>
+		      <title>Inscription</title>
+		      </head>
+		      <body>
+			Pronostic
+                        <g:form method="post" name="registration" url="[action:'create',controller:'user', params:params]">
+
+                          <label>Nom :</label>
+                          <input type="textField" name="nom" id="nom" />
+                          <label>Prenom :</label>
+                          <input type="textField" name="prenom" id="prenom" />
+                          <label>Pseudo :</label>
+                          <input type="textField" name="user" id="user" />
+                          <label>Mot de passe :</label>
+                          <input type="textField" name="pwd" id="pwd" />
+                           <input type="submit" value="valider"/>
+                         </g:form>
+			</body>
+</html>
+

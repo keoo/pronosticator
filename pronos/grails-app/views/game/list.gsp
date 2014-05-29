@@ -5,7 +5,6 @@
 		      <title>List of matches</title>
 		      </head>
 		      <body>
-			Match
 
 
     <table>
