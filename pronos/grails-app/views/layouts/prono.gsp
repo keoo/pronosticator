@@ -41,6 +41,13 @@
 			</g:link>
 		      </li>
 		    </sec:ifAllGranted>
+		    <sec:ifAllGranted roles="ROLE_ADMIN">
+		      <li>
+			<g:link  role="button" controller="gameadmin" action="list">
+			  Nouveau score
+			</g:link>
+		      </li>
+		    </sec:ifAllGranted>
 		    <sec:ifNotLoggedIn>
 		      <li>
 			<g:link controller="login" action="auth">Login</g:link>

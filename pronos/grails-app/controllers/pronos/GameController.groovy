@@ -26,4 +26,12 @@ class GameController {
           redirect(action:"list", params: myparams)
       }
 
+      def refreshpoints(params){
+          def toUpdate = gameService.get(params.id)
+          def pronostic = pronosticService.getByGame(toUpdate)
+	  for (prono in pronostic){
+	      pronosticService.setPoints(prono, toUpdate)
+	  }
+      }
+
 }

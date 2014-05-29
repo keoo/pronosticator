@@ -5,35 +5,25 @@
 		      <title>Pronostic</title>
 		      </head>
 		      <body>
-			Pronostic
-                        <g:form method="post" name="myprono" url="[action:'pronosticated',controller:'game', id:params.id]">
 			  <table>
+                            <g:form method="post" name="myprono" url="[action:'pronosticated',controller:'game', id:params.id]">
 			    <tr>
 			      <td>
 
-                          <label>${params.domicile} :</label>
+                          <label>${params.domicile} </label>
+				<input type="textField" name="domicile" id="domicile" />
+				-
+				<input type="textField" name="exterieur" id="exterieur" />
+				<label>${params.exterieur} </label>
 			      </td>
-			      <td>
-                          <input type="textField" name="domicile" id="domicile" />
-			      </td>
-			    </tr>
+			      </tr>
 			    <tr>
 			      <td>
-                          <label>${params.exterieur} :</label>
-			      </td>
-			      <td>
-                          <input type="textField" name="exterieur" id="exterieur" />
+				<center><input type="submit" value="valider"/></center>
 			      </td>
 			    </tr>
-			    <tr>
-			      <td>
-			      </td>
-			      <td>
-                           <input type="submit" value="valider"/>
-			      </td>
-			    </tr>
-			  </table>
                          </g:form>
+			  </table>
 			</body>
 </html>
 

@@ -19,6 +19,13 @@ class PronosticService {
                 }
       	        return query
 	}
+	def getByGame (def game){
+                def query = Pronostic.where {
+                   game == game
+                }
+      	        return query
+	}
+
 	def create (Map params){
 	  	def user = userService.getCurrentUser()
                 def res = Pronostic.findByGameAndUser(gameService.get(params.game), user)
@@ -34,6 +41,27 @@ class PronosticService {
                 res.time = d1
 
                 res.save(flush:true)
+	}
+
+
+	def setPoints(prono, game){
+	    if (prono.b_domicile == game.bdomicile && prono.b_exterieur == game.bexterieur) {
+	       prono.point = 5;
+	       prono.save(flush:true)
+	    } else if (prono.b_domicile - prono.b_exterieur == game.bdomicile - game.bexterieur) {
+	       prono.point = 4;
+	       prono.save(flush:true)
+	    } else if (prono.b_domicile > prono.b_exterieur && game.bdomicile > game.bexterieur){
+	       prono.point = 3;
+	       prono.save(flush:true)
+	    } else if (prono.b_exterieur > prono.b_domicile && game.bexterieur > game.bdomicile){
+	       prono.point = 3;
+	       prono.save(flush:true)
+	    } else {
+	       prono.point = 1;
+	       prono.save(flush:true)	    
+	    }
+
 	}
 }
 
