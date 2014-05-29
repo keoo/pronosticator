@@ -41,13 +41,13 @@
                 <td>${dom}-${ext}</td>
             </g:if>
             <g:else>
-                <td>A PRONOSTIQUER</td>
+                <td><font color="red">manquant</font></td>
             </g:else>
-            <g:if test="${ match.bdomicile == -1 }">
+            <g:if test="${ match.bdomicile == -1  && match.starttime - new Date() - 1 > 0}">
               <td><g:link controller="pronostic" action="create" id="${match.id}"><button type="button">Pronostiquer</button></g:link></td>
             </g:if>
             <g:else>
-              <td><button disabled="disabled" type="button">Pronosticate!</button> </td>
+              <td>Fini </td>
             </g:else>
         </tr>
         </g:each>        

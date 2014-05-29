@@ -113,5 +113,17 @@ class BootStrap {
 	      game1 = new Game(domicile: 'Australie', exterieur: 'Pays-Bas', starttime: d1).save(flush:true)
               d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-JUN-18")
 	      game1 = new Game(domicile: 'Espagne', exterieur: 'Chili', starttime: d1).save(flush:true)
+
+
+              d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-MAY-28")
+	      game1 = new Game(domicile: 'Espagne', exterieur: 'Chili', starttime: d1).save(flush:true)
+              d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-MAY-29")
+	      game1 = new Game(domicile: 'Espagne', exterieur: 'Chili', starttime: d1).save(flush:true)
+              d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-MAY-30")
+	      game1 = new Game(domicile: 'Espagne', exterieur: 'Chili', starttime: d1).save(flush:true)
+              d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-MAY-31")
+	      game1 = new Game(domicile: 'Espagne', exterieur: 'Chili', starttime: d1).save(flush:true)
+              d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-MAY-31")
+            def game3 = new Game(domicile: 'ukrania', exterieur: 'russia', bdomicile: 2, bexterieur: 1, starttime: d1).save(flush:true)
     }
 }
