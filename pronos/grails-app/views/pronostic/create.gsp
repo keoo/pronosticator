@@ -29,21 +29,23 @@
     <g:form method="post" name="myprono" url="[action:'pronosticated',controller:'game', id:params.id]">
       <div class="container-fluid">
 	<div class="row">
-	  <div class="col-md-3">
+	  <div class="col-md-3"> </div>
+	  <div class="col-md-1">
             <label>${params.domicile} </label>
 	  </div>
-	  <div class="col-md-2">
+	  <div class="col-md-1">
 	    <input type="textField" name="domicile" id="domicile" />
 	  </div>
 	  <div class="col-md-1">
-	    -
+	    <center>-</center>
 	  </div>
-	  <div class="col-md-2">
+	  <div class="col-md-1">
 	    <input type="textField" name="exterieur" id="exterieur" />
 	  </div>
-	  <div class="col-md-3">
+	  <div class="col-md-1">
 	    <label>${params.exterieur} </label>
 	  </div>
+	  <div class="col-md-3"> </div>
 	</div>
       </div>
       <center><input type="submit" value="valider"/></center>
