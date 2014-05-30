@@ -5,9 +5,8 @@
 		      <title>Inscription</title>
 		      </head>
 		      <body>
-			Enregistrement
-                        <g:form method="post" name="registration" url="[action:'create',controller:'registration']">
 			  <table>
+                        <g:form method="post" name="registration" url="[action:'create',controller:'registration']">
 			    <tr>
 			      <td>
 				<label>Nom :</label>
@@ -47,8 +46,8 @@
 				<input type="submit" value="valider"/>
 			      </td>
 			    </tr>
-			  </table>
                          </g:form>
+			  </table>
 			</body>
 </html>
 

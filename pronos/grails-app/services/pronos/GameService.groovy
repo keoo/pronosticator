@@ -7,6 +7,14 @@ class GameService {
       def list (Map params = null){
       	       return Game.findAll()
 	   }
+
+      def listNext (Map params = null){
+      	       return Game.findAllByBdomicile(-1)
+	   }
+      def listOld (Map params = null){
+      	       return Game.findAllByBdomicileNotEqual(-1)
+	   }
+
       def get (id){
           return Game.get(id)
       }

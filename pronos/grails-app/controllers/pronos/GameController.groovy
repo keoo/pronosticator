@@ -14,10 +14,12 @@ class GameController {
       }
 
       def list() {
-          def list = gameService.list()
+//          def list = gameService.list()
+          def next = gameService.listNext()          
+	  def old = gameService.listOld()
           def pronostic = pronosticService.getByUser()
 //          render "prono: "+pronostic
-          [list:list, pronostic:pronostic]
+          [next:next, old:old, pronostic:pronostic]
       }
 
       def pronosticated() {

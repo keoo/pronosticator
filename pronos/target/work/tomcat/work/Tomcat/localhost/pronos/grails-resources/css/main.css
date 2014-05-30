@@ -37,10 +37,10 @@ html * {
 }
 
 body {
-	background: #ffffff;
+	background: #6a8cc3;
 	color: #333333;
 	margin: 0 auto;
-	max-width: 960px;
+/*	max-width: 960px;*/
 	overflow-x: hidden; /* prevents box-shadow causing a horizontal scrollbar in firefox when viewport < 960px wide */
 	   -moz-box-shadow: 0 0 0.3em #255b17;
 	-webkit-box-shadow: 0 0 0.3em #255b17;
@@ -48,7 +48,8 @@ body {
 }
 
 #grailsLogo {
-	background-color: #abbf78;
+	background-color: #3b5998;
+/*	background-color: #abbf78; */
 }
 
 /* replace with .no-boxshadow body if you have modernizr available */
@@ -65,7 +66,10 @@ body {
 }
 
 a:link, a:visited, a:hover {
-	color: #48802c;
+/*	color: #48802c;*/
+	color: #ff0500;
+	font-weight: normal
+	font-size: 1em;
 }
 
 a:hover, a:active {
@@ -108,7 +112,8 @@ img {
 }
 
 .footer {
-	background: #abbf78;
+/*	background: #abbf78;*/
+        background: #3b5998;
 	color: #000;
 	clear: both;
 	font-size: 0.8em;
@@ -247,7 +252,7 @@ label {
 
 input, select, textarea {
 	background-color: #fcfcfc;
-	border: 1px solid #cccccc;
+	border: 1px solid #cccccc; 
 	font-size: 1em;
 	padding: 0.2em 0.4em;
 }
@@ -399,8 +404,8 @@ input:invalid:focus, select:invalid:focus, textarea:invalid:focus {
 /* TABLES */
 
 table {
-	border-top: 1px solid #DFDFDF;
-	border-collapse: collapse;
+/*	border-top: 1px solid #DFDFDF;
+	border-collapse: collapse;*/
 	width: 100%;
 	margin-bottom: 1em;
 }
@@ -476,7 +481,7 @@ th.desc a {
 }
 
 th:hover, tr:hover {
-	background: #E1F2B6;
+	background: #30ad9e;/*E1F2B6;*/
 }
 
 /* PAGINATION */
@@ -600,25 +605,27 @@ ul {
  padding:0;
  margin:0;
  list-style-type:none;
+	width: 100%;
  }
 li {
- margin-left:2px;
+/* margin-left:2px;*/
  float:left; /*pour IE*/
  }
 ul li a {
  display:block;
  float:left;   
  width:200px;
- background-color:#D3D3D3;
- color:black;
+ background-color:#3b5998;
+ color:#aaaaaa;
  text-decoration:none;
  text-align:center;
  padding:5px;
- border:2px solid;
- /*pour avoir un effet "outset" avec IE :*/
- border-color:#DCDCDC #696969 #696969 #DCDCDC;
+/* border:2px solid;
+ /*pour avoir un effet "outset" avec IE :
+ border-color:#DCDCDC #696969 #696969 #DCDCDC;*/
  }
 ul li a:hover {
- background-color:#D3D3D3;
+ background-color:#30ad9e;
  border-color:#696969 #DCDCDC #DCDCDC #696969;
  }
+

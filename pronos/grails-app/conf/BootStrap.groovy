@@ -22,40 +22,6 @@ class BootStrap {
 	  if( !roleAdmin )
 		roleAdmin = new Role(authority: 'ROLE_ADMIN',description:'Admin role').save(flush:true)
 
-          def user = User.findByUsername('user')
-          if ( ! user ){
-      	  user = new User(
-	       username : 'user',
-	       password : 'user',
-	       firstname : 'user',
-	       lastname : 'user',
-	       activated : 1
-	       ).save(flush:true)
-
-	       UserRole.create user, roleUser, true
-
-      	  user = new User(
-	       username : 'jean',
-	       password : 'jean',
-	       firstname : 'jean',
-	       lastname : 'durand',
-	       activated : 1
-	       ).save(flush:true)
-
-	       UserRole.create user, roleUser, true
-
-      	  user = new User(
-	       username : 'bob',
-	       password : 'bob',
-	       firstname : 'bob',
-	       lastname : 'sponge',
-	       activated : 1
-	       ).save(flush:true)
-
-	       UserRole.create user, roleUser, true
-
-
-          }
 
       def admin = User.findByUsername('admin')
       if ( ! admin ){
@@ -71,72 +37,88 @@ class BootStrap {
     }
 
     private void createGames(){
-//            Date d1 = new Date()
-//            def game1 = new Game(domicile: 'france', exterieur: 'uruguay', starttime: d1).save(flush:true)            
-//            def game2 = new Game(domicile: 'brasil', exterieur: 'china', starttime: d1).save(flush:true)            
-//            def game3 = new Game(domicile: 'ukrania', exterieur: 'russia', bdomicile: 2, bexterieur: 1, starttime: d1).save(flush:true)
+              def game = Game.findAll()
+	      if (game) {
+	      	 return
+	      }
+
+
               Date d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-JUN-12")
 	      def game1 = new Game(domicile: 'Brésil', exterieur: 'Croatie', starttime: d1).save(flush:true)
+
               d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-JUN-13")
 	      game1 = new Game(domicile: 'Mexique', exterieur: 'Cameroun', starttime: d1).save(flush:true)
-              d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-JUN-13")
 	      game1 = new Game(domicile: 'Espagne', exterieur: 'Pays-Bas', starttime: d1).save(flush:true)
-
-              d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-JUN-14")
 	      game1 = new Game(domicile: 'Chili', exterieur: 'Australie', starttime: d1).save(flush:true)
+
               d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-JUN-14")
 	      game1 = new Game(domicile: 'Colombie', exterieur: 'Grèce', starttime: d1).save(flush:true)
-              d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-JUN-14")
 	      game1 = new Game(domicile: 'Uruguay', exterieur: 'Costa-Rica', starttime: d1).save(flush:true)
-
-              d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-JUN-15")
 	      game1 = new Game(domicile: 'Cote d\'Ivoire', exterieur: 'Japon', starttime: d1).save(flush:true)
-              d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-JUN-15")
 	      game1 = new Game(domicile: 'Angleterre', exterieur: 'Italie', starttime: d1).save(flush:true)
+
               d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-JUN-15")
 	      game1 = new Game(domicile: 'Suisse', exterieur: 'Equateur', starttime: d1).save(flush:true)
-              d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-JUN-15")
 	      game1 = new Game(domicile: 'France', exterieur: 'Honduras', starttime: d1).save(flush:true)
-
-              d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-JUN-16")
 	      game1 = new Game(domicile: 'Argentine', exterieur: 'Bosnie', starttime: d1).save(flush:true)
+
               d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-JUN-16")
 	      game1 = new Game(domicile: 'Allemagne', exterieur: 'Portugal', starttime: d1).save(flush:true)
-              d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-JUN-16")
 	      game1 = new Game(domicile: 'Iran', exterieur: 'Nigéria', starttime: d1).save(flush:true)
-
-              d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-JUN-17")
 	      game1 = new Game(domicile: 'Ghana', exterieur: 'USA', starttime: d1).save(flush:true)
+
               d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-JUN-17")
 	      game1 = new Game(domicile: 'Belgique', exterieur: 'Algérie', starttime: d1).save(flush:true)
-              d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-JUN-17")
 	      game1 = new Game(domicile: 'Brésil', exterieur: 'Mexique', starttime: d1).save(flush:true)
-
-              d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-JUN-18")
 	      game1 = new Game(domicile: 'Russie', exterieur: 'Corée du sud', starttime: d1).save(flush:true)
+
               d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-JUN-18")
 	      game1 = new Game(domicile: 'Australie', exterieur: 'Pays-Bas', starttime: d1).save(flush:true)
-              d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-JUN-18")
 	      game1 = new Game(domicile: 'Espagne', exterieur: 'Chili', starttime: d1).save(flush:true)
+	      game1 = new Game(domicile: 'Cameroun', exterieur: 'Croatie', starttime: d1).save(flush:true)
 
+              d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-JUN-19")
+	      game1 = new Game(domicile: 'Colombie', exterieur: 'Cote Ivoire', starttime: d1).save(flush:true)
+	      game1 = new Game(domicile: 'Uruguay', exterieur: 'Angleterre', starttime: d1).save(flush:true)
+	      game1 = new Game(domicile: 'Japon', exterieur: 'Grece', starttime: d1).save(flush:true)
 
-              d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-MAY-28")
-	      game1 = new Game(domicile: 'Espagne', exterieur: 'Chili', starttime: d1).save(flush:true)
-              d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-MAY-29")
-	      game1 = new Game(domicile: 'Espagne', exterieur: 'Chili', starttime: d1).save(flush:true)
-              d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-MAY-30")
-	      game1 = new Game(domicile: 'Espagne', exterieur: 'Chili', starttime: d1).save(flush:true)
-              d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-MAY-31")
-	      game1 = new Game(domicile: 'Espagne', exterieur: 'Chili', starttime: d1).save(flush:true)
-              d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-MAY-31")
-            def game3 = new Game(domicile: 'ukrania', exterieur: 'russia', bdomicile: 2, bexterieur: 1, starttime: d1).save(flush:true)
-              d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-JUN-01")
-	      game1 = new Game(domicile: 'Espagne1', exterieur: 'Chili1', starttime: d1).save(flush:true)
-              d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-JUN-02")
-	      game1 = new Game(domicile: 'Espagne2', exterieur: 'Chili2', starttime: d1).save(flush:true)
-              d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-JUN-03")
-	      game1 = new Game(domicile: 'Espagne3', exterieur: 'Chili3', starttime: d1).save(flush:true)
-              d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-JUN-04")
-	      game1 = new Game(domicile: 'Espagne4', exterieur: 'Chili4', starttime: d1).save(flush:true)
+              d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-JUN-20")
+	      game1 = new Game(domicile: 'Italie', exterieur: 'Costa Rica', starttime: d1).save(flush:true)
+	      game1 = new Game(domicile: 'Suisse', exterieur: 'France', starttime: d1).save(flush:true)
+	      game1 = new Game(domicile: 'Honduras', exterieur: 'Equateur', starttime: d1).save(flush:true)
+
+              d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-JUN-21")
+	      game1 = new Game(domicile: 'Argentine', exterieur: 'Iran', starttime: d1).save(flush:true)
+	      game1 = new Game(domicile: 'Allemagne', exterieur: 'Ghana', starttime: d1).save(flush:true)
+	      game1 = new Game(domicile: 'Nigeria', exterieur: 'Bosnie', starttime: d1).save(flush:true)
+
+              d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-JUN-22")
+	      game1 = new Game(domicile: 'Belgique', exterieur: 'Russie', starttime: d1).save(flush:true)
+	      game1 = new Game(domicile: 'Corée', exterieur: 'Algérie', starttime: d1).save(flush:true)
+	      game1 = new Game(domicile: 'USA', exterieur: 'Portugal', starttime: d1).save(flush:true)
+
+              d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-JUN-23")
+	      game1 = new Game(domicile: 'Pays-Bas', exterieur: 'Chili', starttime: d1).save(flush:true)
+	      game1 = new Game(domicile: 'Australie', exterieur: 'Espagne', starttime: d1).save(flush:true)
+	      game1 = new Game(domicile: 'Cameroun', exterieur: 'Brésil', starttime: d1).save(flush:true)
+	      game1 = new Game(domicile: 'Croatie', exterieur: 'Mexique', starttime: d1).save(flush:true)
+
+              d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-JUN-24")
+	      game1 = new Game(domicile: 'Italie', exterieur: 'Uruguay', starttime: d1).save(flush:true)
+	      game1 = new Game(domicile: 'Costa-Rica', exterieur: 'Angleterre', starttime: d1).save(flush:true)
+	      game1 = new Game(domicile: 'Japon', exterieur: 'Colombie', starttime: d1).save(flush:true)
+	      game1 = new Game(domicile: 'Grece', exterieur: 'Cote Ivoire', starttime: d1).save(flush:true)
+
+              d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-JUN-25")
+	      game1 = new Game(domicile: 'Nigeria', exterieur: 'Argentine', starttime: d1).save(flush:true)
+	      game1 = new Game(domicile: 'Bosnie', exterieur: 'Iran', starttime: d1).save(flush:true)
+	      game1 = new Game(domicile: 'Honduras', exterieur: 'Suisse', starttime: d1).save(flush:true)
+	      game1 = new Game(domicile: 'Equateur', exterieur: 'France', starttime: d1).save(flush:true)
+
+              d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-JUN-26")
+	      game1 = new Game(domicile: 'Portugal', exterieur: 'Ghana', starttime: d1).save(flush:true)
+	      game1 = new Game(domicile: 'USA', exterieur: 'Allemagne', starttime: d1).save(flush:true)
+	      game1 = new Game(domicile: 'Corée', exterieur: 'Belgique', starttime: d1).save(flush:true)
+	      game1 = new Game(domicile: 'Algérie', exterieur: 'Russie', starttime: d1).save(flush:true)
     }
 }
