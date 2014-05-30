@@ -25,15 +25,15 @@ class UserService {
         User.get(id)
     }
     def getSortedUsers (){
-//            def query = User.list(sort:"point", order:"desc")
 	      def c = User.createCriteria()
 	      def res = c.list {
 	      	  prono {
 		  	projections {
 		  	      groupProperty('user')
 		  	      sum 'point'
-}
+			      }
 		  }
+			      order('prono', "desc")
 	      }
             return res
 

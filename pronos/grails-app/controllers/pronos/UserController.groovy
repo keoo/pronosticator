@@ -11,10 +11,7 @@ class UserController {
       }
 
       def list() {
-//          def list = userService.list()
           def list = userService.getSortedUsers()
-//          def list = pronosticService.getSortedUsers()
-//	  render "list:"+list
           [list:list]
       }
 
