@@ -19,6 +19,7 @@ class GameHandlerController {
 
       def scored() {
           def myparams = [b_domicile:params.domicile, b_exterieur:params.exterieur, game:params.id]
+	  gameService.update(myparams)
           pronosticService.update(myparams)
           redirect(action:"list", controller:"game")
       }

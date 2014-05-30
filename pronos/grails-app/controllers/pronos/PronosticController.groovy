@@ -18,6 +18,9 @@ class PronosticController {
       }
 
       def list() {
+          def list = pronosticService.getSortedUsers()
+//	  render "list:"+list
+          [list:list]
       }
 
 }

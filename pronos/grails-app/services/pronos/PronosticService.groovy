@@ -70,5 +70,19 @@ class PronosticService {
 	    	setPoints(prono, game)
 		}
 	}
+
+	def getSortedUsers() {
+	      def c = Pronostic.createCriteria()
+	      def res = c.list {
+	      	  projections {
+		  	      groupProperty 'user'
+		  	      sum 'point'
+		  }
+	      }
+            return res
+
+	    
+	}
+
 }
 
