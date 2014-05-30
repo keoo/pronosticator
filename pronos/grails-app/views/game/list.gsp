@@ -9,18 +9,18 @@
 
     <table>
         <tr>
-            <td>Equipe1</td>
-            <td>Equipe2</td>
-            <td>Date</td>
-            <td>Score</td>
-            <td>Pronostiquer</td>
-            <td>Pronostic</td>
+            <td><b><u>Equipe1</u></b></td>
+            <td><b><u>Equipe2</u></b></td>
+            <td><b><u>Date</u></b></td>
+            <td><b><u>Score</u></b></td>
+            <td><b><u>Pronostiquer</u></b></td>
+            <td><b><u>Pronostic</u></b></td>
         </tr>
         <g:each in="${list}" var="match">
         <tr>
             <td>${match.domicile}</td>
             <td>${match.exterieur}</td>
-            <td>${match.starttime}</td>
+            <td><g:formatDate format="dd-MM-yyyy" date="${match.starttime}"/></td>
             <g:if test="${ match.bdomicile == -1 }">
               <td> - </td>
             </g:if>

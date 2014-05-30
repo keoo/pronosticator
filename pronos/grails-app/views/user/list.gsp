@@ -9,11 +9,11 @@
 
     <table>
         <tr> 
-            <td>Nom</td>
-            <td>Prenom</td>
-            <td>pseudo</td>
-            <td>Points</td>
-            <td>Classement</td>
+            <td><b><u>Nom</u></b></td>
+            <td><b><u>Prenom</u></b></td>
+            <td><b><u>pseudo</u></b></td>
+            <td><b><u>Points</u></b></td>
+            <td><b><u>Classement</u></b></td>
         </tr>
 	<g:set var="x" value="${1}"/>
         <g:each in="${list}" var="bla">
@@ -25,7 +25,7 @@
             <td>${x}</td>
         </tr>
 	<g:set var="x" value="${x+1}"/>
-        </g:each>        
+        </g:each>
     </table>
 
 

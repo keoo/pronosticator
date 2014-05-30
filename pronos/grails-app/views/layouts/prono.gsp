@@ -49,6 +49,13 @@
 			<g:link controller="registration" action="register">S'inscrire</g:link>
 		      </li>
 		    </sec:ifNotLoggedIn>
+		    <sec:ifAllGranted roles="ROLE_ADMIN">
+		      <li> 
+			<g:link  role="button" controller="gameHandler" action="create">
+			  Nouveau
+			</g:link>
+		      </li>
+		    </sec:ifAllGranted>
 		  </ul>
 </div>
 </div>

@@ -17,5 +17,11 @@ class GameService {
 	  g.bexterieur = params.b_exterieur as int
 	  g.save(flush:true)
       }
+
+      def create(Map params) {
+             def game = new Game(domicile: params.domicile, exterieur: params.exterieur, starttime: params.starttime)
+	     game.save(flush:true)
+
+      }
 }
 
