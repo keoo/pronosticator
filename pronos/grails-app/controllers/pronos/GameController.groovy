@@ -2,7 +2,7 @@ package pronos
 import pronos.Game;
 import grails.plugin.springsecurity.annotation.Secured
 
-@Secured(['ROLE_USER'])
+@Secured(['ROLE_USER', 'ROLE_ADMIN'])
 class GameController {
 
       def gameService
@@ -35,3 +35,5 @@ class GameController {
       }
 
 }
+
+

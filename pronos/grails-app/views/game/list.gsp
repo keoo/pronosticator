@@ -49,6 +49,13 @@
             <g:else>
               <td>Fini </td>
             </g:else>
+	    <sec:ifAllGranted roles="ROLE_ADMIN">
+              <td>
+		<g:link controller="gameHandler" action="finalise" id="${match.id}">
+		  <button type="button">Score</button>
+		</g:link>
+	      </td>
+	    </sec:ifAllGranted>
         </tr>
         </g:each>        
     </table>

@@ -9,19 +9,15 @@ class PronosticService {
        def list (Map params = null){
            return Pronostic.findAll()
 	}
+
 	def get (def id){
       	       return Pronostic.get(id)
 	}
+
 	def getByUser (Map params){
           	def user = userService.getCurrentUser()
                 def query = Pronostic.where {
                    user == user
-                }
-      	        return query
-	}
-	def getByGame (def game){
-                def query = Pronostic.where {
-                   game == game
                 }
       	        return query
 	}
@@ -62,6 +58,17 @@ class PronosticService {
 	       prono.save(flush:true)	    
 	    }
 
+	}
+
+
+	def update(Map params){
+	    def game = gameService.get(params.game)	    
+	    def list = Pronostic.where {
+                   game == game
+	    }
+	    for (prono in list){
+	    	setPoints(prono, game)
+		}
 	}
 }
 

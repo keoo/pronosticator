@@ -18,6 +18,10 @@ class BootStrap {
 	  if( !roleUser )
 		roleUser = new Role(authority: 'ROLE_USER',description:'User role').save(flush:true)
 
+          def roleAdmin = Role.findByAuthority('ROLE_ADMIN')
+	  if( !roleAdmin )
+		roleAdmin = new Role(authority: 'ROLE_ADMIN',description:'Admin role').save(flush:true)
+
           def user = User.findByUsername('user')
           if ( ! user ){
       	  user = new User(
@@ -53,16 +57,17 @@ class BootStrap {
 
           }
 
-//      def admin = User.findByUsername('admin')
-//      if ( ! admin ){
-//      	 admin = new User(
-//	       username : 'admin',
-//	       password : 'admin',
-//	       firstname : 'admin',
-//	       lastname : 'admin',
-//	       activated : 1
-//	       ).save(flush:true)
-//      }
+      def admin = User.findByUsername('admin')
+      if ( ! admin ){
+      	 admin = new User(
+	       username : 'admin',
+	       password : 'admin',
+	       firstname : 'admin',
+	       lastname : 'admin',
+	       activated : 1
+	       ).save(flush:true)
+	       UserRole.create admin, roleAdmin, true
+      }
     }
 
     private void createGames(){
@@ -125,5 +130,13 @@ class BootStrap {
 	      game1 = new Game(domicile: 'Espagne', exterieur: 'Chili', starttime: d1).save(flush:true)
               d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-MAY-31")
             def game3 = new Game(domicile: 'ukrania', exterieur: 'russia', bdomicile: 2, bexterieur: 1, starttime: d1).save(flush:true)
+              d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-JUN-01")
+	      game1 = new Game(domicile: 'Espagne1', exterieur: 'Chili1', starttime: d1).save(flush:true)
+              d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-JUN-02")
+	      game1 = new Game(domicile: 'Espagne2', exterieur: 'Chili2', starttime: d1).save(flush:true)
+              d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-JUN-03")
+	      game1 = new Game(domicile: 'Espagne3', exterieur: 'Chili3', starttime: d1).save(flush:true)
+              d1 = new SimpleDateFormat("yyyy-MMM-dd").parse("2014-JUN-04")
+	      game1 = new Game(domicile: 'Espagne4', exterieur: 'Chili4', starttime: d1).save(flush:true)
     }
 }

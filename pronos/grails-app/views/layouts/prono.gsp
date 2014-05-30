@@ -24,7 +24,7 @@
 <div class="navbar navbar-fixed-top navbar-inverse">
     <div class="navbar-inner">
         <div class="container">		  <ul>
-		    <sec:ifAllGranted roles="ROLE_USER">
+		    <sec:ifLoggedIn>
 		      <li> 
 			<g:link  role="button" controller="game" action="list">
 			  Pronostiquer
@@ -40,14 +40,7 @@
 
 			</g:link>
 		      </li>
-		    </sec:ifAllGranted>
-		    <sec:ifAllGranted roles="ROLE_ADMIN">
-		      <li>
-			<g:link  role="button" controller="gameadmin" action="list">
-			  Nouveau score
-			</g:link>
-		      </li>
-		    </sec:ifAllGranted>
+		    </sec:ifLoggedIn>
 		    <sec:ifNotLoggedIn>
 		      <li>
 			<g:link controller="login" action="auth">Login</g:link>
