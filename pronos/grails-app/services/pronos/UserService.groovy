@@ -39,6 +39,12 @@ class UserService {
 
     }
 
+
+    def changePassword(password){
+    	def user = springSecurityService.getCurrentUser()
+    	user.setPassword(password)
+    }
+
     def create(Map params){
           def roleUser = Role.findByAuthority('ROLE_USER')
           def user = User.findByUsername(params.user)

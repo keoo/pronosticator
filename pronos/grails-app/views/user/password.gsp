@@ -2,10 +2,10 @@
 <html>
   <head>
     <meta name="layout" content="prono"/>
-    <title>Pronostic</title>
+    <title>Changement de mot de passe</title>
   </head>
   <body>
-    <g:form method="post" name="myprono" url="[action:'pronosticated',controller:'game', id:params.id]">
+    <g:form method="post" name="mypwd" url="[action:'passwordified',controller:'user']">
       <div class="row">
 	<div class="col-md-3"> </div>
 	<div class="col-md-6">
@@ -14,11 +14,8 @@
 	    <tr>
 	      <td>
 		
-                <label>${params.domicile} </label>
-		<input type="textField" name="domicile" id="domicile" />
-		-
-		<input type="textField" name="exterieur" id="exterieur" />
-		<label>${params.exterieur} </label>
+                <label>Nouveau mot de passe </label>
+		<input type="textField" name="password" id="password" />
 	      </td>
 	    </tr>
 	  </table>

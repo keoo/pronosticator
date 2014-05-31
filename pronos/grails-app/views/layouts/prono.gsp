@@ -46,8 +46,11 @@
 		  </g:link>
 		</li>
 		<li>
-		  <g:link controller="logout" role="button" method="post"> Déconnexion <sec:username /> 
-		    
+		  <g:link controller="user" action="password" role="button" method="post"> Changement mot de passe
+		  </g:link>
+		</li>
+		<li>
+		  <g:link controller="logout" role="button" method="post"> Déconnexion <sec:username /> 		    
 		  </g:link>
 		</li>
 	      </sec:ifLoggedIn>

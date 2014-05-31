@@ -18,4 +18,12 @@ class UserController {
       def logout(){
       	  redirect(controller: "logout")
       }
+
+      def password(){
+
+      }
+      def passwordified(params){
+      	  userService.changePassword(params.password)
+          redirect(action:"list")
+      }
 }
