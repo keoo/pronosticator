@@ -1,31 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta name="layout" content="prono"/>
     <title>Changement de mot de passe</title>
-  </head>
-  <body>
-    <g:form method="post" name="mypwd" url="[action:'passwordified',controller:'user']">
-      <div class="row">
-	<div class="col-md-3"> </div>
-	<div class="col-md-6">
-	  
-	  <table class="table">
-	    <tr>
-	      <td>
-		
-                <label>Nouveau mot de passe </label>
-		<input type="textField" name="password" id="password" />
-	      </td>
-	    </tr>
-	  </table>
-	</div>
-	<div class="col-md-3"> </div>
-      </div>
-      <div class="row">
-	<center><input type="submit" value="valider"/></center>
-      </div>
-    </g:form>
-  </body>
+</head>
+
+<body>
+<g:form class="form-horizontal" role="form" method="post" name="mypwd"
+        url="[action: 'passwordified', controller: 'user']">
+    <div class="form-group">
+        <label for="password" class="control-label col-md-offset-2 col-md-3">Nouveau mot de passe</label>
+
+        <div class="col-md-5">
+            <input type="text" name="password" id="password"/>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-8">
+            <button type="submit" class="btn btn-default">Valider</button>
+        </div>
+    </div>
+</g:form>
+</body>
 </html>
 
