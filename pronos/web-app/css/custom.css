@@ -6,4 +6,12 @@
 
 body{
 background: #3b5998;
+/**color: #aaaaaa;*/
+}
+
+ul li a {
+}
+
+table tr td a{
+color: #ee1010;
 }

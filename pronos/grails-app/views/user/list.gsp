@@ -16,7 +16,7 @@
         <tr>
             <td>${user[0].username}</td>
             <td>${user[1]}</td>
-            <td>${i}</td>
+            <td>${i+1}</td>
         </tr>
     </g:each>
 </table>
