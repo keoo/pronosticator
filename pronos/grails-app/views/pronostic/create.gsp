@@ -1,34 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta name="layout" content="prono"/>
     <title>Pronostic</title>
-  </head>
-  <body>
-    <g:form method="post" name="myprono" url="[action:'pronosticated',controller:'game', id:params.id]">
-      <div class="row">
-	<div class="col-md-3"> </div>
-	<div class="col-md-6">
-	  
-	  <table class="table">
-	    <tr>
-	      <td>
-		
-                <label>${params.domicile} </label>
-		<input type="textField" name="domicile" id="domicile" />
-		-
-		<input type="textField" name="exterieur" id="exterieur" />
-		<label>${params.exterieur} </label>
-	      </td>
-	    </tr>
-	  </table>
-	</div>
-	<div class="col-md-3"> </div>
-      </div>
-      <div class="row">
-	<center><input type="submit" value="valider"/></center>
-      </div>
-    </g:form>
-  </body>
+</head>
+
+<body>
+<g:form class="form-inline text-center" method="post" name="myprono" url="[action: 'pronosticated', controller: 'game', id: params.id]">
+    <div class="form-group">
+        <label for="domicile">${params.domicile}</label>
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" name="domicile" id="domicile">
+    </div>
+    <div class="form-group">
+        <label>-</label>
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" name="exterieur" id="exterieur">
+    </div>
+    <div class="form-group">
+        <label for="exterieur">${params.exterieur}</label>
+    </div>
+</g:form>
+</body>
 </html>
 

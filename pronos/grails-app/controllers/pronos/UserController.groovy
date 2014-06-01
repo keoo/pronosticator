@@ -11,8 +11,8 @@ class UserController {
       }
 
       def list() {
-          def list = userService.getSortedUsers()
-          [list:list]
+          def users = userService.getSortedUsers()
+          [users: users]
       }
 
       def logout(){

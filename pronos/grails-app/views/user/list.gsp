@@ -1,33 +1,24 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta name="layout" content="prono"/>
-		      <title>Classement</title>
-		      </head>
-		      <body>
+<head>
+    <meta name="layout" content="prono"/>
+    <title>Classement</title>
+</head>
 
-
-    <table>
-        <tr> 
-            <td><b><u>Nom</u></b></td>
-            <td><b><u>Prenom</u></b></td>
-            <td><b><u>pseudo</u></b></td>
-            <td><b><u>Points</u></b></td>
-            <td><b><u>Classement</u></b></td>
-        </tr>
-	<g:set var="x" value="${1}"/>
-        <g:each in="${list}" var="bla">
+<body>
+<table class="table table-hover text-center">
+    <tr>
+        <th class="text-center">Pseudo</td>
+        <th class="text-center">Points</td>
+        <th class="text-center">Classement</td>
+    </tr>
+    <g:each in="${users}" var="user" status="i">
         <tr>
-            <td>${bla[0].firstname}</td>
-            <td>${bla[0].lastname}</td>
-            <td>${bla[0].username}</td>
-            <td>${bla[1]}</td>
-            <td>${x}</td>
+            <td>${user[0].username}</td>
+            <td>${user[1]}</td>
+            <td>${i}</td>
         </tr>
-	<g:set var="x" value="${x+1}"/>
-        </g:each>
-    </table>
-
-
-			</body>
+    </g:each>
+</table>
+</body>
 </html>

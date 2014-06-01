@@ -1,53 +1,42 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta name="layout" content="prono"/>
-		      <title>Inscription</title>
-		      </head>
-		      <body>
-			  <table>
-                        <g:form method="post" name="registration" url="[action:'create',controller:'registration']">
-			    <tr>
-			      <td>
-				<label>Nom :</label>
-			      </td>
-			      <td>
-				<input type="textField" name="nom" id="nom" />
-			      </td>
-			    </tr>
-			    <tr>
-			      <td>
-				<label>Prenom :</label>
-			      </td>
-			      <td>
-				<input type="textField" name="prenom" id="prenom" />
-			      </td>
-			    </tr>
-			    <tr>
-			      <td>
-				<label>Pseudo :</label>
-			      </td>
-			      <td>
-				<input type="textField" name="user" id="user" />
-			      </td>
-			    </tr>
-			    <tr>
-			      <td>
-				<label>Mot de passe :</label>
-			      </td>
-			      <td>
-				<input type="password" name="pwd" id="pwd" />
-			      </td>
-			    </tr>
-			    <tr>
-			      <td>
-			      </td>
-			      <td>
-				<input type="submit" value="valider"/>
-			      </td>
-			    </tr>
-                         </g:form>
-			  </table>
-			</body>
+<head>
+    <meta name="layout" content="prono"/>
+    <title>Inscription</title>
+</head>
+
+<body>
+<g:form class="form-horizontal" method="post" name="registration" url="[action: 'create', controller: 'registration']">
+    <div class="form-group">
+        <label for="nom" class="col-sm-2 control-label">Nom</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" name="nom" id="nom">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="prenom" class="col-sm-2 control-label">Prénom</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" name="prenom" id="prenom">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="user" class="col-sm-2 control-label">Pseudo</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" name="user" id="user">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="pwd" class="col-sm-2 control-label">Mot de passe</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" name="pwd" id="pwd">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Valider</button>
+        </div>
+    </div>
+</g:form>
+</body>
 </html>
 
