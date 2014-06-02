@@ -15,6 +15,7 @@ class GameService {
       	       return Game.findAllByBdomicileNotEqual(-1)
 	   }
 
+
       def get (id){
           return Game.get(id)
       }

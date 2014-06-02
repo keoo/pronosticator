@@ -14,13 +14,21 @@ class GameController {
       }
 
       def list() {
-//          def list = gameService.list()
           def next = gameService.listNext()          
 	  def old = gameService.listOld()
           def pronostic = pronosticService.getByUser()
-//          render "prono: "+pronostic
           [next:next, old:old, pronostic:pronostic]
       }
+
+
+      def spy(params) {
+          def next = gameService.listNext()
+          def old = gameService.listOld()
+          def pronostic = pronosticService.getByGivenUser(params.id)
+          def user = userService.get(params.id)
+          [next:next, old:old, pronostic:pronostic, user:user]
+      }
+
 
       def pronosticated() {
           def myparams = [b_domicile:params.domicile, b_exterieur:params.exterieur, game:params.id]

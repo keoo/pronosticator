@@ -22,6 +22,14 @@ class PronosticService {
       	        return query
 	}
 
+	def getByGivenUser (id){
+          	def user = userService.get(id)
+                def query = Pronostic.where {
+                   user == user
+                }
+      	        return query
+	}
+
 	def create (Map params){
 	  	def user = userService.getCurrentUser()
                 def res = Pronostic.findByGameAndUser(gameService.get(params.game), user)
