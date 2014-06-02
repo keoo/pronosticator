@@ -9,9 +9,17 @@ background: #3b5998;
 color: #ffffff;
 }
 
+p {
+color: #000000;
+}
+
 ul li a {
 }
 
 table tr td a{
 color: #ee1010;
+}
+
+table tr:hover{
+color: #000000;
 }
