@@ -4,6 +4,13 @@
             <sec:ifLoggedIn>
                 <li><g:link role="button" controller="game" action="list">Pronostiquer</g:link></li>
                 <li><g:link role="button" controller="user" action="list">Classement</g:link></li>
+                <li class="dropdown dropdown-inverse">
+		    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Statistiques</a>
+		    <ul class="dropdown-menu" role="menu">
+		        <li><g:link role="button" controller="statistic" action="user"><sec:username/></g:link></li>
+		        <li><g:link role="button" controller="statistic" action="prono">globales</g:link></li>
+		    </ul>
+		</li>
                 <li><g:link controller="user" action="password" role="button" method="post">Changement mot de passe</g:link></li>
                 <li><g:link controller="logout" role="button" method="post">Déconnexion <sec:username/></g:link></li>
             </sec:ifLoggedIn>

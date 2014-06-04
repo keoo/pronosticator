@@ -1,6 +1,0 @@
-package pronos
-import pronos.User;
-import grails.plugin.springsecurity.annotation.Secured
-
-@Secured(['ROLE_USER'])
-class GameController {
