@@ -12,6 +12,7 @@
         <th class="text-center">Points</th>
         <th class="text-center">Classement</th>
         <th class="text-center">Consulter</th>
+        <th class="text-center">Statistiques</th>
     </tr>
     <g:each in="${users}" var="user" status="i">
         <tr>
@@ -19,6 +20,7 @@
             <td>${user[1]}</td>
             <td>${i+1}</td>
             <td><g:link controller="game" action="spy" id="${user[0].id}"><button type="button">Espionner</button></g:link></td>
+            <td><g:link controller="statistic" action="list" id="${user[0].id}"><button type="button">Statistiques</button></g:link></td>
         </tr>
     </g:each>
 </table>
