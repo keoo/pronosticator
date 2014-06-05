@@ -57,7 +57,11 @@ class StatisticController {
 			    }
 			 }
 	  };
+          if (judged == 0) {
+             avg = 0
+          } else {
 	  avg = totalScore / judged
+          }
 	  [total:total, bad: bad, good: good, great: great, perfect: perfect, judged : judged, totalScore: totalScore, avg : avg]
       }
 
@@ -98,7 +102,11 @@ class StatisticController {
 			    }
 			 }
 	  };
+          if (judged == 0) {
+             avg = 0
+          } else {
 	  avg = totalScore / judged
+          }
 	  [total:total, bad: bad, good: good, great: great, perfect: perfect, judged : judged, totalScore: totalScore, avg : avg, user: user]
       }
 
@@ -141,7 +149,11 @@ class StatisticController {
 			    }
 			 }
 	  };
+          if (judged == 0) {
+             avg = 0
+          } else {
 	  avg = totalScore / judged
+          }
 	  [total:total, bad: bad, good: good, great: great, perfect: perfect, judged : judged, totalScore: totalScore, avg : avg]
       }
 

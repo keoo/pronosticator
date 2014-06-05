@@ -12,7 +12,7 @@
             <td>${total}</td>
         </tr>
         <tr>
-            <td>Matchs finis</td>
+            <td>Paris sur matchs finis</td>
             <td>${judged}</td>
         </tr>
         <tr>
