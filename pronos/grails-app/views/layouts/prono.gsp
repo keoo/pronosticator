@@ -13,13 +13,43 @@
     <g:javascript library="jquery"/>
     <r:require module="bootstrap"/>
     <r:layoutResources/>
+    <script type="text/ecmascript">//<![CDATA[
+function animateTitle (t) {
+    var title = document.getElementsByTagName ("h1")[0];
+    var spans = title.getElementsByTagName ("span");
+    for (var i = 0; i < spans.length; i++) {
+			spans[i].style.top = (30+50 * Math.sin (t/200 + i/4))+"px";
+			spans[i].style.color = "hsl(" + (t/20 + i*10) + ",100%,50%)";
+			}
+			window.requestAnimationFrame (animateTitle);
+}
+//]]></script>
+
+    <style type="text/css">/*<![CDATA[*/
+h1 {
+padding-top: 50px;
+padding-bottom: 50px;
+}
+h1 span {
+position: relative;
+}
+/*]]>*/
+</style>
 </head>
 
-<body>
+<body onload="animateTitle (0)">
 <g:render template="/templates/navbar" />
 
+<h1>
+<center>  <span>P</span><span>r</span><span>o</span><span>n</span><span>o</span><span>s</span><span>t</span><span>i</span><span>c</span><span>a</span><span>t</span><span>o</span><span>r</span>
+</center>
+</h1>
 <div role="main" class="container">
-    <div id="grailsLogo" role="banner"><a href="#"><img src="${resource(dir: 'images', file: 'logo.png')}"></a></div>
+<div id="grailsLogo" role="banner">
+
+<a href="#"><img src="${resource(dir: 'images', file: 'kitty.png')}"></a>
+</div>
+<!--    <div id="grailsLogo" role="banner"><a href="#"><img src="${resource(dir: 'images', file: 'logo.png')}"></a></div>-->
     <g:layoutBody/>
 </div>
 <r:layoutResources/>
