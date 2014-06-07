@@ -15,6 +15,7 @@
             <td><b><u>Score</u></b></td>
             <td><b><u>Pronostic</u></b></td>
             <td><b><u>Pronostiquer</u></b></td>
+            <td><b><u>Statistiques</u></b></td>
         </tr>
         <g:each in="${next}" var="match">
         <tr>
@@ -56,6 +57,9 @@
 		</g:link>
 	      </td>
 	    </sec:ifAllGranted>
+	    <td>
+	      <g:link controller="statistic" action="game" id="${match.id}"><button type="button">Statistiques</button></g:link>
+	    </td>
         </tr>
         </g:each>        
     </table>
@@ -69,6 +73,7 @@
             <td><b><u>Score</u></b></td>
             <td><b><u>Pronostic</u></b></td>
             <td><b><u>Points</u></b></td>
+            <td><b><u>Statistiques</u></b></td>
         </tr>
         <g:each in="${old}" var="match">
         <tr>
@@ -109,6 +114,9 @@
 		</g:link>
 	      </td>
 	    </sec:ifAllGranted>
+	    <td>
+	      <g:link controller="statistic" action="game" id="${match.id}"><button type="button">Statistiques</button></g:link>
+	    </td>
         </tr>
         </g:each>        
     </table>

@@ -19,55 +19,17 @@ class StatisticController {
 	  [game:game, user:user, prono:prono]
       }
 
-      def user() {
-      	  def game = gameService.list()
-	  def user = userService.list()
-	  def prono = pronosticService.getByUser()
-	  def total = 0
-	  def judged = 0
-	  def avg = 0
-	  def perfect = 0
-	  def great = 0
-	  def good = 0
-	  def bad = 0
-	  def totalScore = 0
-	  prono.each(){
-		def pts = it
-		def pt = pts.point
- 	  		 total += 1
-			 if (pt) {
-			    judged += 1;
-			    totalScore += pt
-			    switch (pt) {
-			    	   case 1:
-				   	bad += 1
-					break;
-				   case 3:
-				   	good += 1;
-					break;
-				   case 4:
-				   	great += 1;
-					break;
-				   case 5:
-				   	perfect += 1;
-					break;
-				   default:
-					break;
-				
-			    }
-			 }
-	  };
-          if (judged == 0) {
-             avg = 0
-          } else {
-	  avg = totalScore / judged
-          }
-	  [total:total, bad: bad, good: good, great: great, perfect: perfect, judged : judged, totalScore: totalScore, avg : avg]
-      }
-
       def list(params) {
-	  def prono = pronosticService.getByGivenUser(params.id)
-	  def user = userService.get(params.id)
+      	  def prono
+	  def user
+	  def id = params.id as int
+	  if (id == -1){
+	    prono = pronosticService.getByUser()
+	    user = userService.getCurrentUser()
+	  } else {
+	    prono = pronosticService.getByGivenUser(params.id)
+	    user = userService.get(params.id)
+	  }
 	  def total = 0
 	  def judged = 0
 	  def avg = 0
@@ -157,6 +119,60 @@ class StatisticController {
 	  [total:total, bad: bad, good: good, great: great, perfect: perfect, judged : judged, totalScore: totalScore, avg : avg]
       }
 
+
+      def game(params){
+	  def prono = pronosticService.getByGame(params.id)
+	  def totalScore = 0
+	  def judged = 0
+	  def avg = 0
+	  def total = 0
+	  def perfect = 0
+	  def great = 0
+	  def good = 0
+	  def bad = 0
+	  def totalDom = 0
+	  def totalExt = 0
+	  prono.each(){
+		def pts = it
+		def pt = pts.point
+ 	  		 total += 1
+		totalDom += pts.b_domicile
+		totalExt += pts.b_exterieur
+			 if (pt) {
+			    judged += 1;
+			    totalScore += pt
+			    switch (pt) {
+			    	   case 1:
+				   	bad += 1
+					break;
+				   case 3:
+				   	good += 1;
+					break;
+				   case 4:
+				   	great += 1;
+					break;
+				   case 5:
+				   	perfect += 1;
+					break;
+				   default:
+					break;
+				
+			    }
+			 }
+	  };
+          if (judged == 0) {
+             avg = 0
+          } else {
+	  avg = totalScore / judged
+          }
+	  if (total > 0){
+	     totalDom /= total
+	     totalExt /= total
+	  }
+
+	  [total:total, bad: bad, good: good, great: great, perfect: perfect, totalScore: totalScore, avg : avg, totalDom: totalDom, totalExt: totalExt]
+
+      }
 
 }
 

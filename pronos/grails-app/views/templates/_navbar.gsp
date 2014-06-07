@@ -7,7 +7,7 @@
                 <li class="dropdown dropdown-inverse">
 		    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Statistiques</a>
 		    <ul class="dropdown-menu" role="menu">
-		        <li><g:link role="button" controller="statistic" action="user"><sec:username/></g:link></li>
+		        <li><g:link role="button" controller="statistic" action="list" id="-1"><sec:username/></g:link></li>
 		        <li><g:link role="button" controller="statistic" action="prono">globales</g:link></li>
 		    </ul>
 		</li>
