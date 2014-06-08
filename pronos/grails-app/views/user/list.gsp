@@ -16,7 +16,14 @@
     </tr>
     <g:each in="${users}" var="user" status="i">
         <tr>
-            <td>${user[0].username}</td>
+            <td>
+              <g:if test="${ user[0].username == 'keo' }">
+		<a href="#"><img src="${resource(dir: 'images', file: 'kittyHalf.png')}"></a>
+	      </g:if>
+	      <g:else>
+		${user[0].username}
+	      </g:else>
+	    </td>
             <td>${user[1]}</td>
             <td>${i+1}</td>
             <td><g:link controller="game" action="spy" id="${user[0].id}"><button type="button">Espionner</button></g:link></td>
