@@ -8,6 +8,10 @@
 <body>
 <table class="table table-hover text-center">
         <tr>
+            <td>Match</td>
+            <td>${domicile} - ${exterieur}</td>
+        </tr>
+        <tr>
             <td>Nombre de paris</td>
             <td>${total}</td>
         </tr>
@@ -38,6 +42,14 @@
         <tr>
             <td>Score moyen</td>
             <td>${totalDom}-${totalExt}</td>
+        </tr>
+        <tr>
+            <td>Pronostic du nombre de buts maximal et minimal marqués pour ${domicile}</td>
+            <td>${maxDom} / ${minDom}</td>
+        </tr>
+        <tr>
+            <td>Pronostic du nombre de buts maximal et minimal marqués pour ${exterieur}</td>
+            <td>${maxExt} / ${minExt}</td>
         </tr>
 </table>
 </body>

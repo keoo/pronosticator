@@ -122,6 +122,9 @@ class StatisticController {
 
       def game(params){
 	  def prono = pronosticService.getByGame(params.id)
+          def game = gameService.get(params.id)
+          def domicile = game.domicile
+          def exterieur = game.exterieur
 	  def totalScore = 0
 	  def judged = 0
 	  def avg = 0
@@ -132,12 +135,28 @@ class StatisticController {
 	  def bad = 0
 	  def totalDom = 0
 	  def totalExt = 0
+          def maxExt = 0
+          def minExt = 0
+          def maxDom = 0
+          def minDom = 10
 	  prono.each(){
 		def pts = it
 		def pt = pts.point
  	  		 total += 1
 		totalDom += pts.b_domicile
-		totalExt += pts.b_exterieur
+		totalExt += pts.b_exterieur    
+                if (pts.b_domicile>maxDom){
+                   maxDom = pts.b_domicile
+                }
+                if (pts.b_exterieur>maxExt){
+                   maxExt = pts.b_exterieur
+                }
+                if (pts.b_domicile<minDom){
+                   minDom = pts.b_domicile
+                }
+                if (pts.b_exterieur<minExt){
+                   minExt = pts.b_exterieur
+                }
 			 if (pt) {
 			    judged += 1;
 			    totalScore += pt
@@ -170,7 +189,7 @@ class StatisticController {
 	     totalExt /= total
 	  }
 
-	  [total:total, bad: bad, good: good, great: great, perfect: perfect, totalScore: totalScore, avg : avg, totalDom: totalDom, totalExt: totalExt]
+	  [total:total, bad: bad, good: good, great: great, perfect: perfect, totalScore: totalScore, avg : avg, totalDom: totalDom, totalExt: totalExt, minDom: minDom, maxDom: maxDom, minExt: minExt, maxExt: maxExt, domicile: domicile, exterieur: exterieur]
 
       }
 
