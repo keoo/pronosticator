@@ -12,6 +12,7 @@ class UserController {
 
       def list() {
           def users = userService.getSortedUsers()
+          users.sort { -it[1] }
           [users: users]
       }
 
