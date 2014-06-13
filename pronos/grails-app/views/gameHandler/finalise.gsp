@@ -22,6 +22,9 @@
     <div class="form-group">
         <label for="exterieur">${params.exterieur}</label>
     </div>
+    <div class="form-group">
+      <input type="submit" value="valider"/>
+    </div>
 </g:form>
 </body>
 </html>
