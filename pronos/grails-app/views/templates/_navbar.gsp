@@ -4,6 +4,7 @@
             <sec:ifLoggedIn>
                 <li><g:link role="button" controller="game" action="list">Pronostiquer</g:link></li>
                 <li><g:link role="button" controller="user" action="list">Classement</g:link></li>
+                <li><g:link role="button" controller="rule" action="show">Règlement</g:link></li>
                 <li class="dropdown dropdown-inverse">
 		    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Statistiques</a>
 		    <ul class="dropdown-menu" role="menu">
