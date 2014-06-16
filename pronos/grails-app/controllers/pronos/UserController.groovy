@@ -27,4 +27,14 @@ class UserController {
       	  userService.changePassword(params.password)
           redirect(action:"list")
       }
+
+      def reset(params){
+         [userid: params.id]
+      }
+
+      def reseted(params){
+      	  userService.changeUserPassword(params.password, params.userid)
+          redirect(action:"list")
+      }
+
 }

@@ -13,6 +13,9 @@
         <th class="text-center">Classement</th>
         <th class="text-center">Consulter</th>
         <th class="text-center">Statistiques</th>
+        <sec:ifAllGranted roles="ROLE_ADMIN">
+          <th class="text-center">Changer mot de passe</th>
+	</sec:ifAllGranted>
     </tr>
     <g:each in="${users}" var="user" status="i">
         <tr>
@@ -28,6 +31,9 @@
             <td>${i+1}</td>
             <td><g:link controller="game" action="spy" id="${user[0].id}"><button type="button">Espionner</button></g:link></td>
             <td><g:link controller="statistic" action="list" id="${user[0].id}"><button type="button">Statistiques</button></g:link></td>
+        <sec:ifAllGranted roles="ROLE_ADMIN">
+          <td><g:link controller="user" action="reset" id="${user[0].id}"><button type="button">Reset</button></g:link></td>
+	</sec:ifAllGranted>
         </tr>
     </g:each>
 </table>

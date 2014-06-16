@@ -46,6 +46,12 @@ class UserService {
         user.setPassword(password)
     }
 
+    def changeUserPassword(password, userid) {
+        def user = User.get(userid)
+        user.setPassword(password)
+    }
+
+
     def create(Map params) {
         def roleUser = Role.findByAuthority('ROLE_USER')
         def user = User.findByUsername(params.user)
